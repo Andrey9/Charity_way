@@ -1,0 +1,13 @@
+{
+  "name": "sysTranslit",
+  "_cacheHeaders": {
+    "ETag": "\"d1242f0cfcc574ea13f5af58dddeab11\"",
+    "Last-Modified": "Sat, 23 Jan 2016 07:12:13 GMT",
+    "Content-Length": "31486",
+    "Content-Type": "application/octet-stream"
+  },
+  "_release": "e-tag:d1242f0cf",
+  "_source": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/synctranslit/synctranslit_0.0.7.zip",
+  "_target": "*",
+  "_originalSource": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/synctranslit/synctranslit_0.0.7.zip"
+}
