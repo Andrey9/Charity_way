@@ -55,7 +55,7 @@ $router->group(
         $router->get('faq', ['as' => 'questions.index', 'uses' => 'Frontend\QuestionController@index']);
 
         // feedback
-        $router->group(
+        /*$router->group(
             [
                 'prefix'     => 'feedback',
                 'middleware' => 'ajax',
@@ -66,8 +66,8 @@ $router->group(
                     ['as' => 'feedback.store', 'uses' => 'Frontend\FeedbackController@store']
                 );
             }
-        );
-
+        );*/
+        $router->post('feedback', ['as' => 'feedback.store','uses' => 'Frontend\FeedbackController@store']);
         // subscribes
         $router->post(
             '/subscribes',

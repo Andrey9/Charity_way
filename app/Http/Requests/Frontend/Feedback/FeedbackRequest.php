@@ -19,7 +19,7 @@ class FeedbackRequest extends FormRequest
     {
         return [
             'fio'     => 'required',
-            'email'   => 'required|email',
+            'phone'   => 'required',
             'message' => 'required',
         ];
     }

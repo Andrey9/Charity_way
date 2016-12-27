@@ -23,12 +23,28 @@ class FeedbackController extends FrontendController
      */
     public function store(FeedbackRequest $request)
     {
-        try {
+        Mail::queue(
+            'emails.admin.new_feedback',
+            [
+                'fio'          => $request->get('fio'),
+                'phone'        => $request->get('phone'),
+                'user_message' => $request->get('message'),
+            ],
+            function ($message) {
+                $message->to(config('app.email'), config('app.name'))->subject(trans('subjects.new_feedback'));
+            }
+        );
+
+        return view('views.mail.confirm', [
+            'status'  => 'success',
+            'message' => trans('messages.thanks for your feedback')
+        ]);
+        /*try {
             Mail::queue(
                 'emails.admin.new_feedback',
                 [
                     'fio'          => $request->get('fio'),
-                    'email'        => $request->get('email'),
+                    'phone'        => $request->get('phone'),
                     'user_message' => $request->get('message'),
                 ],
                 function ($message) {
@@ -36,12 +52,15 @@ class FeedbackController extends FrontendController
                 }
             );
 
-            return [
+            return view('views.mail.confirm', [
                 'status'  => 'success',
-                'message' => trans('messages.thanks for your feedback'),
-            ];
+                'message' => trans('messages.thanks for your feedback')
+            ])->render();
         } catch (Exception $e) {
-            return ['status' => 'error', 'message' => trans('messages.an error has occurred, try_later')];
-        }
+            return view('views.mail.confirm', [
+                'status'  => 'success',
+                'message' => trans('messages.an error has occurred, try_later')
+            ])->render();
+        }*/
     }
 }
