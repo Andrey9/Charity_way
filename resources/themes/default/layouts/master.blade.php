@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{!! asset('assets/themes/default/main.css') !!}">
 </head>
 <body>
+<div id="fb-root"></div>
 
 @include('partials.header')
 
@@ -31,7 +32,10 @@
 
 @include('partials.delivery')
 
+
 @include('partials.share')
+
+
     {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>--}}
     <script src="{!! asset('assets/themes/default/js/jquery-3.1.1.min.js') !!}"></script>
     <script src="{!! asset('assets/themes/default/js/main.js') !!}"></script>
@@ -80,7 +84,7 @@
             }).done(function(response){
                 $('#modal_form').html(response);
             })
-        })
+        });
 
         //order form submit
         $(document).on('submit', '#order-product', function(event){
@@ -99,7 +103,7 @@
                 console.log(response);
                 $('#modal_form').html(response);
             })
-        })
+        });
 
         $(document).on('click','.oplata1',function () { // ловим клик по крестику или подложке
             $('#modal_form1')
@@ -118,7 +122,7 @@
                 }
             }).done(function(response){
                 $('#modal_form').html(response);
-            })
+            });
             $('#overlay').fadeIn(400, // сначала плавно показываем темную подложку
                 function () { // после выполнения предъидущей анимации
                     $('#modal_form')
@@ -127,6 +131,27 @@
                 });
         });
 
+        {{--$('#fb-share').on('click', function(event){--}}
+            {{--event.preventDefault();--}}
+            {{--var shareurl = "{!! url()->current() !!}";--}}
+            {{--window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURI(shareurl)+'&t='+document.title, '',--}}
+                {{--'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');--}}
+            {{--return false;--}}
+        {{--});--}}
+        {{--$('#vk-share').on('click', function(event){--}}
+            {{--event.preventDefault();--}}
+            {{--var shareurl = "{!! url()->current() !!}";--}}
+            {{--window.open('http://vk.com/share.php?url='+encodeURI(shareurl)+'&title='+document.title, '',--}}
+                {{--'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');--}}
+            {{--return false;--}}
+        {{--});--}}
+        {{--$('#tw-share').on('click', function(event){--}}
+            {{--event.preventDefault();--}}
+            {{--var shareurl = "{!! url()->current() !!}";--}}
+            {{--window.open('http://twitter.com/share?url='+encodeURI(shareurl)+'&text='+document.title, '',--}}
+                {{--'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');--}}
+            {{--return false;--}}
+        {{--});--}}
     </script>
 </body>
 </html>
