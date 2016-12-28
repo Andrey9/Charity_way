@@ -1,6 +1,6 @@
 <header class="header clearfix">
     <div class="wrap_header clearfix">
-        <a href="#" class="logo "><img src="{!! asset('assets/themes/default/img/logo.png') !!}" ></a>
+        <a href="{!! route('home') !!}" class="logo "><img src="{!! asset('assets/themes/default/img/logo.png') !!}" ></a>
 
         <div class="wrap_caption_header">
             <div class="dum_class ">
@@ -16,7 +16,7 @@
 
         <div class="wrapper_zadacha clearfix">
             <div class="clearfix">
-                <img>
+                <img src="{!! $model->task_image !!}">
             </div>
 
             <div class="wrap_help">

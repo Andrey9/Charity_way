@@ -51,9 +51,6 @@ $(document).on('submit', '#order-product', function(event){
         type: formMethod,
         url: formUrl,
         data: formData
-//                beforeSend: function(){
-//                    console.log(formData);
-//                }
     }).done(function(response){
         console.log(response);
         $('#modal_form').html(response);
@@ -84,28 +81,30 @@ $(document).on('click','.oplata1',function () { // ловим клик по кр
                 .css('display', 'block') // убираем у модального окна display: none;
                 .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
         });
-    $('#feedback-form').on('submit', function(event){
-        event.preventDefault();
-        var formData = $(this).serialize();
-        var formMethod = $(this).attr('method');
-        var formUrl = $(this).attr('action');
-        console.log(formData);
-        $.ajax({
-            type: formMethod,
-            url: formUrl,
-            data: formData
-        }).done(function(response){
-            console.log(response);
-            $('#modal_form').html(response);
-            $('#overlay').fadeIn(400, // сначала плавно показываем темную подложку
-                function () { // после выполнения предъидущей анимации
-                    $('#modal_form')
-                        .css('display', 'block') // убираем у модального окна display: none;
-                        .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
-                });
-            $('#feed_name').val('');
-            $('#feed_phone').val('');
-            $('#feed_text').val('');
-        })
+});
+$('#feedback-form').on('submit', function(event){
+    event.preventDefault();
+    var formData = $(this).serialize();
+    var formMethod = $(this).attr('method');
+    var formUrl = $(this).attr('action');
+    console.log(formData);
+    $.ajax({
+        type: formMethod,
+        url: formUrl,
+        data: formData,
+        dataType: 'json'
+    }).done(function(response){
+        var html = '<span id="modal_close"><img src="assets/themes/default/img/close.png"></span>';
+        html += '<h3 class="name_tovar">'+response['message']+'</h3>';
+        $('#modal_form').html(html);
+        $('#overlay').fadeIn(400, // сначала плавно показываем темную подложку
+            function () { // после выполнения предъидущей анимации
+                $('#modal_form')
+                    .css('display', 'block') // убираем у модального окна display: none;
+                    .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
+            });
+        $('#feed_name').val('');
+        $('#phone').val('');
+        $('#feed_text').val('');
     })
 });

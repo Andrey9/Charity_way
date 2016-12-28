@@ -18,7 +18,7 @@ $router->group(
             ['as' => 'pages.show', 'uses' => 'Frontend\PageController@getPage']
         );
 
-        // news
+        /*// news
         $router->get('news', ['as' => 'news.index', 'uses' => 'Frontend\NewsController@index']);
         $router->get('news/{slug}', ['as' => 'news.show', 'uses' => 'Frontend\NewsController@show']);
 
@@ -33,26 +33,26 @@ $router->group(
 
                 $router->post('/', ['as' => 'comments.store', 'uses' => 'Frontend\CommentController@store']);
             }
-        );
+        );*/
         //products
         $router->get('product', 'Frontend\ProductController@index');
         $router->get('show_more','Frontend\ProductController@show_more');
         $router->get('about_product', 'Frontend\ProductController@show');
         $router->get('order_product', 'Frontend\ProductController@show');
 
-        // likes
+        /*// likes
 
         $router->post(
             '/likes',
             ['middleware' => ['auth', 'ajax'], 'as' => 'likes.index', 'uses' => 'Frontend\LikeController@store']
-        );
+        );*/
         //order
         $router->post('order', ['as' => 'order.index', 'uses' => 'Frontend\OrderController@store'] );
-        // search
-        $router->get('search', ['as' => 'search.index', 'uses' => 'Frontend\SearchController@index']);
+        /*// search
+        $router->get('search', ['as' => 'search.index', 'uses' => 'Frontend\SearchController@index']);*/
 
-        // faq
-        $router->get('faq', ['as' => 'questions.index', 'uses' => 'Frontend\QuestionController@index']);
+        /*// faq
+        $router->get('faq', ['as' => 'questions.index', 'uses' => 'Frontend\QuestionController@index']);*/
 
         // feedback
         /*$router->group(
@@ -68,13 +68,13 @@ $router->group(
             }
         );*/
         $router->post('feedback', ['as' => 'feedback.store','uses' => 'Frontend\FeedbackController@store']);
-        // subscribes
+        /*// subscribes
         $router->post(
             '/subscribes',
             ['middleware' => 'ajax', 'as' => 'subscribes.store', 'uses' => 'Frontend\SubscribeController@store']
-        );
+        );*/
 
-        // profiles
+        /*// profiles
         $router->group(
             [
                 'prefix'     => 'profiles',
@@ -109,6 +109,6 @@ $router->group(
                     ['as' => 'profiles.update.password', 'uses' => 'Frontend\ProfileController@updatePassword']
                 );
             }
-        );
+        );*/
     }
 );

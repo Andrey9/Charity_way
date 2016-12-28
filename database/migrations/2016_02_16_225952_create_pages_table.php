@@ -22,6 +22,7 @@ class CreatePagesTable extends Migration
 
                 $table->string('slug', 255);
                 $table->string('image', 255)->nullable();
+                $table->string('task_image', 255)->nullable();
                 $table->string('external_url', 255)->nullable();
                 $table->integer('position')->unsigned();
                 $table->integer('view_count')->default(0);

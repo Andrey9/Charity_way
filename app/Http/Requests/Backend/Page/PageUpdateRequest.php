@@ -34,6 +34,7 @@ class PageUpdateRequest extends FormRequest
             'slug'     => 'unique:pages,slug,'.$id.',id',
             'position' => 'required|integer',
             'image'    => ['regex:'.$regex],
+            'task_image' => ['regex:'.$regex]
         ];
 
         $languageRules = [

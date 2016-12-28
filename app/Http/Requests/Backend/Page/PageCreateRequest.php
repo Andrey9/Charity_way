@@ -32,6 +32,7 @@ class PageCreateRequest extends FormRequest
             'slug'     => 'unique:pages,slug',
             'position' => 'required|integer',
             'image'    => ['regex:'.$regex],
+            'task_image' => ['regex:'.$regex]
         ];
 
         $languageRules = [

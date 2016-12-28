@@ -23,7 +23,7 @@ class FeedbackController extends FrontendController
      */
     public function store(FeedbackRequest $request)
     {
-        Mail::queue(
+        /*Mail::queue(
             'emails.admin.new_feedback',
             [
                 'fio'          => $request->get('fio'),
@@ -33,13 +33,13 @@ class FeedbackController extends FrontendController
             function ($message) {
                 $message->to(config('app.email'), config('app.name'))->subject(trans('subjects.new_feedback'));
             }
-        );
+        );*/
 
-        return view('views.mail.confirm', [
+        /*return json_encode([
             'status'  => 'success',
             'message' => trans('messages.thanks for your feedback')
-        ]);
-        /*try {
+        ]);*/
+        try {
             Mail::queue(
                 'emails.admin.new_feedback',
                 [
@@ -52,15 +52,15 @@ class FeedbackController extends FrontendController
                 }
             );
 
-            return view('views.mail.confirm', [
+            return json_encode([
                 'status'  => 'success',
                 'message' => trans('messages.thanks for your feedback')
-            ])->render();
+            ]);
         } catch (Exception $e) {
-            return view('views.mail.confirm', [
-                'status'  => 'success',
+            return json_encode([
+                'status'  => 'error',
                 'message' => trans('messages.an error has occurred, try_later')
-            ])->render();
-        }*/
+            ]);
+        }
     }
 }

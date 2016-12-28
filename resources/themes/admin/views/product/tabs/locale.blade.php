@@ -25,7 +25,7 @@
     {!! Form::label($locale . '[manufacturer]', trans('labels.manufacturer'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
     <div class="col-xs-12 col-sm-9 col-md-10">
-        {!! Form::text($locale.'[manufacturer]', isset($model->translate($locale)->manufacturer) ? $model->translate($locale)->meta_keywords : '', ['placeholder' => trans('labels.manufacturer'), 'class' => 'form-control input-sm manufacturer_'.$locale]) !!}
+        {!! Form::text($locale.'[manufacturer]', isset($model->translate($locale)->manufacturer) ? $model->translate($locale)->manufacturer : '', ['placeholder' => trans('labels.manufacturer'), 'class' => 'form-control input-sm manufacturer_'.$locale]) !!}
 
         {!! $errors->first($locale.'[manufacturer]', '<p class="help-block error">:message</p>') !!}
     </div>

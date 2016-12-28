@@ -10,3 +10,8 @@
     </div>
 </div>
 <div class="bg_hvuli2"></div>
+<style>
+    .btn_next{
+        cursor: pointer;
+    }
+</style>

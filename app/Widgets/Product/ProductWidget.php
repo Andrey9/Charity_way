@@ -24,7 +24,7 @@ class ProductWidget extends Widget
                 'manufacturer',
                 'class'
             )
-            ->limit(3)
+            ->limit(6)
             ->get();
 
         return view('views.product._products')->with('list', $list)->render();
