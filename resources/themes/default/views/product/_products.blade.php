@@ -2,12 +2,12 @@
     <div class="wrapper_tovar">
         <div class="price"><p>{!! $product->price !!} <span>@lang('labels.grn')</span></p></div>
         <div class="text-center">
-            <a href="#" class="img_tovar"><img src="{!! $product->image !!}"></a></div>
+            <a class="img_tovar"><img src="{!! $product->image !!}"></a></div>
         <div class="title_tovar">{!! $product->n !!}</div>
 
         <div class="wrap_hover_tovar">
             <div class="price"><p>{!! $product->price !!} <span>@lang('labels.grn')</span></p></div>
-            <div class="text-center"><a href="#" class="img_tovar"><img src="{!! $product->image !!}"></a></div>
+            <div class="text-center"><a class="img_tovar"><img src="{!! $product->image !!}"></a></div>
             <div class="title_tovar">{!! $product->n !!}</div>
             <div class="wrap_opus">
                 <div class="line ">
