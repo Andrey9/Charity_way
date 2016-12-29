@@ -34,7 +34,7 @@ class ProductController extends FrontendController
 
     public function show_more(Request $request){
         $offset = $request->input('offset');
-        $list = Product::withTranslations()->joinTranslations('products')->positionSorted()->visible()
+        $list = Product::withTranslations()->joinTranslations('products')->positionSorted()->visible()->with('category')
             ->select(
                 'products.id',
                 'product_translations.name as n',
