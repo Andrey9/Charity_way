@@ -225,8 +225,8 @@
 
 <!-- Scripts -->
 <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
-<script src="{!! asset('assets/themes/default/js/main.js') !!}"></script>
 <script src="{!! asset('assets/components/jquery.maskedinput/dist/jquery.maskedinput.min.js') !!}"></script>
+<script src="{!! asset('assets/themes/default/js/main.js') !!}"></script>
 <script >
     jQuery(function($){
         $("#phone").mask("+38(099) 999-9999");

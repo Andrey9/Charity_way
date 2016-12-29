@@ -40,15 +40,17 @@ class FeedbackController extends FrontendController
             'message' => trans('messages.thanks for your feedback')
         ]);*/
         try {
-            Mail::queue(
+            Mail::send(
                 'emails.admin.new_feedback',
                 [
                     'fio'          => $request->get('fio'),
                     'phone'        => $request->get('phone'),
                     'user_message' => $request->get('message'),
                 ],
-                function ($message) {
-                    $message->to(config('app.email'), config('app.name'))->subject(trans('subjects.new_feedback'));
+                function ($message) use ($request) {
+                    $message->from(config('mail.username'), $request->get('fio'));
+
+                    $message->to(config('mail.username'), config('app.name'))->subject(trans('subjects.new_feedback'));
                 }
             );
 
