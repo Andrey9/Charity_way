@@ -15,7 +15,7 @@
                     <div class="group-input">
                         {!! Form::hidden('item[product_id]', $product->id) !!}
                         <div class="number-max"></div>
-                        {!! Form::number('item[count]', 1) !!}
+                        {!! Form::number('item[count]', 1,['readonly' => true]) !!}
                         <div class="number-min"></div>
                     </div>
                 </div>
