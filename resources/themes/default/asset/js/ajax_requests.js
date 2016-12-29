@@ -95,7 +95,8 @@ $('#feedback-form').on('submit', function(event){
         dataType: 'json'
     }).done(function(response){
         var html = '<span id="modal_close"><img src="assets/themes/default/img/close.png"></span>';
-        html += '<h3 class="name_tovar">'+response['message']+'</h3>';
+        html += '<h3 class="zakaz">'+response['message']+'</h3>';
+        html += '<style>.zakaz{margin-top: 200px;}</style>';
         $('#modal_form').html(html);
         $('#overlay').fadeIn(400, // сначала плавно показываем темную подложку
             function () { // после выполнения предъидущей анимации

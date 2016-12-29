@@ -87,7 +87,8 @@ $('#feedback-form').on 'submit', (event) ->
     data: formData
     dataType: 'json').done (response) ->
       html = '<span id="modal_close"><img src="assets/themes/default/img/close.png"></span>'
-      html += '<h3 class="name_tovar">' + response['message'] + '</h3>'
+      html += '<h3 class="zakaz">' + response['message'] + '</h3>'
+      html += '<style>.zakaz{margin-top: 200px;}</style>'
       $('#modal_form').html html
       $('#overlay').fadeIn 400, ->
 # после выполнения предъидущей анимации
