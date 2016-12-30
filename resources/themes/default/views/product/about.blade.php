@@ -1,5 +1,5 @@
     <span id="modal_close1"><img src="{!! asset('assets/themes/default/img/close.png') !!}"></span>
-    <form action="" method="post">
+
         <h3 class="zakaz1">информация о товаре</h3>
         <h3 class="name_tovar1">{!! $product->n !!}</h3>
 
@@ -14,4 +14,3 @@
             <button class="oplata1" data-id="{!! $product->id !!}">@lang('labels.help_as_action')</button>
         </div>
 
-    </form>
