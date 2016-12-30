@@ -34,7 +34,7 @@
             <div class="wrap_help">
                 <h3 class="help_text1">@lang('front_labels.task')</h3>
                 <h3 class="help_text2">@lang('front_messages.task')</h3>
-                <a href="/" class="btn_help_naw">@lang('labels.help_as_action')</a>
+                <a href="https://www.liqpay.com/" class="btn_help_naw">@lang('labels.help_as_action')</a>
             </div>
             <div class="nipple_class">
                 <div class="nipple"></div>
@@ -76,7 +76,7 @@
             {!! Widget::widget__product() !!}
             <a class="btn_next show_more">@lang('labels.show_more')</a>
             <h3 class="help_now">Или помогите прямо сейчас</h3>
-            <a href="/" class="btn_help_naw">@lang('labels.help_as_action')</a>
+            <a href="https://www.liqpay.com/" class="btn_help_naw">@lang('labels.help_as_action')</a>
         </div>
     </div>
 </div>
