@@ -34,7 +34,7 @@
     {!! Form::label('price', trans('labels.price'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-        {!! Form::number('price', $model->price ?:null, ['placeholder' => trans('labels.price'), 'required' => true,'class' => 'form-control input-sm']) !!}
+        {!! Form::text('price', $model->price ?:null, ['placeholder' => trans('labels.price'), 'required' => true,'class' => 'form-control input-sm']) !!}
 
         {!! $errors->first('price', '<p class="help-block error">:message</p>') !!}
     </div>

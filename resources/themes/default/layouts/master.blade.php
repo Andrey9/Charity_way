@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('meta')
     <link rel="stylesheet" href="{!! asset('assets/themes/default/css/styles.css') !!}">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 </head>
 <body>
 
@@ -33,7 +34,7 @@
             <div class="wrap_help">
                 <h3 class="help_text1">@lang('front_labels.task')</h3>
                 <h3 class="help_text2">@lang('front_messages.task')</h3>
-                <a href="/" class="btn_help_naw">@lang('labels.help_as_action')</a>
+                <a href="/" target="_blank" class="btn_help_naw">@lang('labels.help_as_action')</a>
             </div>
             <div class="nipple_class">
                 <div class="nipple"></div>
@@ -75,7 +76,7 @@
             {!! Widget::widget__product() !!}
             <a class="btn_next show_more">@lang('labels.show_more')</a>
             <h3 class="help_now">Или помогите прямо сейчас</h3>
-            <a href="/" class="btn_help_naw">@lang('labels.help_as_action')</a>
+            <a href="/" class="btn_help_naw" target="_blank">@lang('labels.help_as_action')</a>
         </div>
     </div>
 </div>
@@ -231,6 +232,25 @@
     jQuery(function($){
         $("#phone").mask("+38(099) 999-9999");
     });
+
+   /* $(document).on('click', '.wrap_hover_tovar', function(){
+        var _id = $(this).data('id');
+        $.ajax({
+            type: 'get',
+            url: 'order_product',
+            data: {
+                id: _id
+            }
+        }).done(function(response){
+            $('#modal_form').html(response);
+            $('#overlay').fadeIn(400, // сначала плавно показываем темную подложку
+                function () { // после выполнения предъидущей анимации
+                    $('#modal_form')
+                        .css('display', 'block') // убираем у модального окна display: none;
+                        .animate({opacity: 1, top: '30%'}, 200); // плавно прибавляем прозрачность одновременно со съезжанием вниз
+                });
+        })
+    })*/
 </script>
 </body>
 </html>

@@ -18,11 +18,11 @@
     </div>
 </div>
 
-<div class="form-group @if ($errors->has('content')) has-error @endif">
-    {!! Form::label('content', trans('labels.content'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
+<div class="form-group @if ($errors->has('value')) has-error @endif">
+    {!! Form::label('content', trans('labels.value'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
-    <div class="col-xs-8 col-sm-7 col-md-10">
-        {!! Form::textarea('content', isset($model->content) ? $model->content: '', ['rows' => '3', 'placeholder' => trans('labels.content'), 'class' => 'form-control input-sm content']) !!}
+    <div class="col-xs-12 col-sm-6 col-md-8 col-lg-6">
+        {!! Form::text('content', isset($model->content) ? $model->content : 0, ['placeholder' => trans('labels.content'), 'class' => 'form-control input-sm']) !!}
 
         {!! $errors->first('content', '<p class="help-block error">:message</p>') !!}
     </div>
@@ -32,7 +32,7 @@
     {!! Form::label('value', trans('labels.value'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-        {!! Form::text('value', $model->value ?: 0, ['placeholder' => trans('labels.value'), 'class' => 'form-control input-sm']) !!}
+        {!! Form::text('value', isset($model->value) ? $model->value : 0, ['placeholder' => trans('labels.value'), 'class' => 'form-control input-sm']) !!}
 
         {!! $errors->first('value', '<p class="help-block error">:message</p>') !!}
     </div>

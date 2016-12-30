@@ -74,7 +74,7 @@ $(document).ready ->
     count = if count < 1 then 1 else count
     $input.val count
     $input.change()
-    $sum.html parseFloat(Math.round($input.val() * $price * 100) / 100).toFixed(2)
+    $sum.html $input.val() * $price
     false
   $(document).on 'click', '.number-max', ->
     $input = $(this).closest('.group-input').find('input[type="number"]')

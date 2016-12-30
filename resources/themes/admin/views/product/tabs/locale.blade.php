@@ -21,21 +21,21 @@
 
 @include('partials.tabs.ckeditor', ['id' => $locale . '[description]'])
 
-<div class="form-group @if ($errors->has($locale.'.[manufacturer]')) has-error @endif">
+<div class="form-group required @if ($errors->has($locale.'.[manufacturer]')) has-error @endif">
     {!! Form::label($locale . '[manufacturer]', trans('labels.manufacturer'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
     <div class="col-xs-12 col-sm-9 col-md-10">
-        {!! Form::text($locale.'[manufacturer]', isset($model->translate($locale)->manufacturer) ? $model->translate($locale)->manufacturer : '', ['placeholder' => trans('labels.manufacturer'), 'class' => 'form-control input-sm manufacturer_'.$locale]) !!}
+        {!! Form::text($locale.'[manufacturer]', isset($model->translate($locale)->manufacturer) ? $model->translate($locale)->manufacturer : '', ['required' => true,'placeholder' => trans('labels.manufacturer'), 'class' => 'form-control input-sm manufacturer_'.$locale]) !!}
 
         {!! $errors->first($locale.'[manufacturer]', '<p class="help-block error">:message</p>') !!}
     </div>
 </div>
 
-<div class="form-group @if ($errors->has($locale.'.[class]')) has-error @endif">
+<div class="form-group required @if ($errors->has($locale.'.[class]')) has-error @endif">
     {!! Form::label($locale . '[class]', trans('labels.product_class'), ['class' => 'control-label col-xs-4 col-sm-3 col-md-2']) !!}
 
     <div class="col-xs-12 col-sm-9 col-md-10">
-        {!! Form::text($locale.'[class]', isset($model->translate($locale)->class) ? $model->translate($locale)->class : '', ['placeholder' => trans('labels.product_class'), 'class' => 'form-control input-sm class_'.$locale]) !!}
+        {!! Form::text($locale.'[class]', isset($model->translate($locale)->class) ? $model->translate($locale)->class : '', ['required' => true,'placeholder' => trans('labels.product_class'), 'class' => 'form-control input-sm class_'.$locale]) !!}
 
         {!! $errors->first($locale.'[class]', '<p class="help-block error">:message</p>') !!}
     </div>

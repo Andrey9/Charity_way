@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('slug');
             $table->integer('parent_id')->nullable()->unsigned()->index();
-            $table->decimal('price',8,2)->nullable();
+            $table->integer('price')->nullable();
             $table->integer('volume')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('position')->unsigned();

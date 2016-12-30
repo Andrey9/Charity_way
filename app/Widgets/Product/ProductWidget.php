@@ -12,7 +12,7 @@ class ProductWidget extends Widget
     public function index()
     {
 
-        $list = Product::withTranslations()->joinTranslations('products')->positionSorted()->visible()->with('category')
+        $list = Product::withTranslations()->joinTranslations('products')->positionSorted()->visible()->has('category')
             ->select(
                 'products.id',
                 'product_translations.name as n',
