@@ -34,7 +34,7 @@
             <div class="wrap_help">
                 <h3 class="help_text1">@lang('front_labels.task')</h3>
                 <h3 class="help_text2">@lang('front_messages.task')</h3>
-                <a href="https://www.liqpay.com/" class="btn_help_naw">@lang('labels.help_as_action')</a>
+                <a href="https://www.liqpay.com/" class="btn">@lang('labels.help_as_action')</a>
             </div>
             <div class="nipple_class">
                 <div class="nipple"></div>
@@ -81,11 +81,7 @@
     </div>
 </div>
 <div class="bg_hvuli2"></div>
-<style>
-    .btn_next{
-        cursor: pointer;
-    }
-</style>
+
 
 <!-- Done -->
 <div class="wrap_work clearfix">
@@ -223,7 +219,14 @@
         </div>
     </div>
 </div>
-
+<style>
+    .btn_next{
+        cursor: pointer;
+    }
+    .social_network a {
+        text-decoration: none;
+    }
+</style>
 <!-- Scripts -->
 <script src="{!! asset('assets/components/jquery/dist/jquery.min.js') !!}"></script>
 <script src="{!! asset('assets/components/jquery.maskedinput/dist/jquery.maskedinput.min.js') !!}"></script>
