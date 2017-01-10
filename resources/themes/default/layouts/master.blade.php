@@ -195,7 +195,7 @@
                     </a>
                     <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
                     <script type="text/javascript">
-                        document.write(VK.Share.button({url: '{!! url()->current() !!}'}, {type: 'custom',
+                        document.write(VK.Share.button({url: '{!! url()->current() !!}', title:'{!! $model->meta_title !!}', description:'{!! $model->meta_description !!}', noparse: true}, {type: 'custom',
                             text:   '<span class="contact">'+
                             '<div class="vk"></div>'+
                             '<div class="count_users">'
@@ -207,7 +207,7 @@
                             +'</div></span>'
                         }));
                     </script>
-                    <a href="https://twitter.com/share?url={!! urlencode(url()->current()) !!}&text={!! urlencode($model->meta_title) !!}"
+                    <a href="https://twitter.com/share?url={!! urlencode(url()->current()) !!}&text={!! urlencode($model->meta_description) !!}"
                        onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=600'); return false;">
                         <span class="contact">
                             <div class="twiter"></div>
