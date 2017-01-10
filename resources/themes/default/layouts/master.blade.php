@@ -195,7 +195,7 @@
                     </a>
                     <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
                     <script type="text/javascript">
-                        document.write(VK.Share.button({url: '{!! url()->current() !!}', title:'{!! $model->meta_title !!}' }, {type: 'custom',
+                        document.write(VK.Share.button({url: '{!! url()->current() !!}'}, {type: 'custom',
                             text:   '<span class="contact">'+
                             '<div class="vk"></div>'+
                             '<div class="count_users">'

@@ -82,6 +82,6 @@ $(document).ready ->
     $sum = $('.order_sum_price')
     $input.val parseInt($input.val()) + 1
     $input.change()
-    $sum.html parseFloat(Math.round($input.val() * $price * 100) / 100).toFixed(2)
+    $sum.html $input.val() * $price
     false
   return
