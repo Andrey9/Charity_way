@@ -13,10 +13,3 @@
     <meta name="twitter:image" content='{!! $model->image !!}' />
     <link rel="image_src" href="{!! $model->image !!}" />
 @endsection
-
-<script>
-    console.log('{!! $model->meta_title !!}');
-    console.log('{!! $model->meta_description !!}');
-    console.log('{!! $model->meta_keywords !!}');
-    console.log('{!! $model->image !!}');
-</script>
