@@ -141,8 +141,8 @@
                 <div class="wrap_phon clearfix">
                     <div class="text_phon">Телефоны:</div>
                     <div class="wraper_number_phon">
-                        <a href="tel:+38 098 739 23 12" class="number_phon1">+38 098 739 23 12</a>
-                        <a  href="tel:+38 098 739 23 12" class="number_phon2">+38 098 739 23 12</a>
+                        <a href="tel:@lang('front_messages.number_1')" class="number_phon1">@lang('front_messages.number_1')</a>
+                        <a href="tel:@lang('front_messages.number_2')" class="number_phon2">@lang('front_messages.number_2')</a>
                     </div>
                 </div>
                 <div class="email_wrapper">
@@ -161,7 +161,7 @@
                             <div class="img_bg1"></div>
                             {!! Form::text('fio',null, ['class' => 'name_sender', 'placeholder' => 'Ваше имя', 'id' => 'feed_name', 'required' => true]) !!}
                             <div class="img_bg2"></div>
-                            {!! Form::text('phone',null, ['class' => 'number_phon_sender', 'placeholder' => 'Телефон', 'id' => 'phone', 'required' => true, 'title' => 'Формат: 380 96 999 99 99']) !!}
+                            {!! Form::tel('phone',null, ['class' => 'number_phon_sender', 'placeholder' => 'Телефон', 'id' => 'phone', 'required' => true, 'title' => 'Формат: 380 96 999 99 99']) !!}
                         </div>
                         {!! Form::textarea('message',null,['class' => 'massage', 'placeholder' => 'Текст сообщения', 'id' => 'feed_text', 'required' => true] ) !!}
                         {!! Form::submit(trans('labels.write'), ['class' => 'btn_massage']) !!}
@@ -195,7 +195,7 @@
                     </a>
                     <script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
                     <script type="text/javascript">
-                        document.write(VK.Share.button({url: '{!! url()->current() !!}', title:'{!! $model->meta_title !!}', description:'{!! $model->meta_description !!}', noparse: true}, {type: 'custom',
+                        document.write(VK.Share.button({url: '{!! url()->current() !!}'}, {type: 'custom',
                             text:   '<span class="contact">'+
                             '<div class="vk"></div>'+
                             '<div class="count_users">'
